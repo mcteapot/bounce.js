@@ -22,7 +22,17 @@ BOUNCE.Vector3.prototype = {
 
 		return this;
 
-	}
+	},
+
+	setVector: function ( v ) {
+
+		this.x = v.x;
+		this.y = v.y;
+		this.z = v.z;
+
+		return this;
+
+	},
 
 	setX: function ( x ) {
 
@@ -45,6 +55,24 @@ BOUNCE.Vector3.prototype = {
 		this.z = z;
 
 		return this;
+
+	},
+
+	clear: function () {
+
+		this.x = 0;
+		this.y = 0;
+		this.z = 0;
+
+	},
+
+	print: function ( groupName ) {
+
+		console.group( groupName + ":Vector3" );
+			console.log( "x: " + this.x );
+			console.log( "y: " + this.y );
+			console.log( "z: " + this.z );
+		console.groupEnd();
 
 	},
 
@@ -84,7 +112,7 @@ BOUNCE.Vector3.prototype = {
 
 	},
 
-	addScalarVector: function ( v, s ) {
+	addScaledVector: function ( v, s ) {
 
 		this.x += v.x * s;
 		this.y += v.y * s;
@@ -114,7 +142,7 @@ BOUNCE.Vector3.prototype = {
 
 	},
 
-	subtractScalarVector: function ( v, s ) {
+	subtractScaledVector: function ( v, s ) {
 
 		this.x -= v.x * s;
 		this.y -= v.y * s;
